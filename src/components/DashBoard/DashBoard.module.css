@@ -1,0 +1,110 @@
+.card{   
+    width: 210px;
+    height: 62px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+   
+}
+.summarycount{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0.001em;
+    text-align: left;
+    color: #3F4354;
+}
+.summarytitle{
+    font-family: Inter;
+font-size: 14px;
+font-weight: 500;
+line-height: 17px;
+letter-spacing: 0em;
+text-align: left;
+color: #A1A6B7;
+
+}
+
+.customerchartcard,.propertychartcard{
+    width: 49%;
+height: 351px;
+display: flex;
+padding: 15px;
+
+background: #FFFFFF;
+box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.08);
+border-radius: 8px;
+flex-direction: column;
+}
+.cardheader{
+    display:flex;
+    width: 100%;
+}
+.datelabel{
+    background: #F5F8FA;
+border-radius: 8px;
+
+height: 40px;
+margin-left: auto;
+margin-right: 15px;
+font-family: Inter;
+font-size: 14px;
+font-weight: 600;
+line-height: 17px;
+letter-spacing: 0.001em;
+text-align: center;
+color: #A1A6B7;
+padding: 10px;
+}
+.cardtitle{
+    font-family: Inter;
+font-size: 14px;
+font-weight: 600;
+line-height: 17px;
+letter-spacing: 0.001em;
+text-align: left;
+color: #3F4354;
+}
+.totalvalue{
+    font-family: Inter;
+font-size: 12px;
+font-weight: 500;
+line-height: 15px;
+letter-spacing: 0.001em;
+text-align: left;
+color: #A1A6B7;
+margin-top: 10px;
+}
+
+.card:hover {
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.13);
+}  
+
+@media screen and (min-width: 1920px) {
+    .card{   
+        width: 250px;
+        height: 62px;
+        background: #FFFFFF;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+       
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    .card{   
+        width: 180px;
+        height: 62px;
+        background: #FFFFFF;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+       
+    }
+  }
