@@ -6,7 +6,7 @@ const DashBoard = Loadable(lazy(() => import("../pages/DashBoard/DashBoard")));
 const Login = Loadable(lazy(() => import("../pages/Login/Login")));
 const AuthenticatedRoute = Loadable(lazy(() => import("./AuthenticatedRoute")));
 const LoginLayout = Loadable(lazy(() => import("../components/Layout/LoginLayout")));
-// const Information = Loadable(lazy(() => import("../pages/Information/Information")));
+const Information = Loadable(lazy(() => import("../pages/Information/Information")));
 // const Customer = Loadable(lazy(() => import("../pages/Customer/Customer")));
 // const CustomerSummary = Loadable(lazy(() => import("../pages/Customer/CustomerSummary")));
 // const ForgetEmailAlert = Loadable(lazy(() => import("../pages/ForgetPassword/Otp")));
@@ -45,16 +45,16 @@ export const routes = [
       //   ],
       // },
 
-      // {
-      //   path: "information",
-      //   element: <MainLayout />,
-      //   children: [
-      //     {
-      //       path: "",
-      //       element: <Information />,
-      //     },
-      //   ],
-      // },
+      {
+        path: "/information",
+        element: <MainLayout />,
+        children: [
+          {
+            path: "",
+            element: <Information />,
+          },
+        ],
+      },
     ],
   },
   /* Login Routes*/
