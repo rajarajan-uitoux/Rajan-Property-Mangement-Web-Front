@@ -178,6 +178,12 @@ text-align: left;
 .ant-menu-item:hover .menu_icon{
   stroke: #489975
 }
+.ant-menu-item:hover .menulink{
+  color: #489975;
+}
+.ant-menu-item-selected .menulink{
+  color: #489975;
+}
 .ant-menu-item-selected .menu_icon{
   stroke: #489975
 }

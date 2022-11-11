@@ -14,7 +14,7 @@ const menus = [
   {
     label: "Customers management",
     link: "/customer",
-    // style: { marginLeft: "10px" },
+    style: { marginLeft: "10px" },
   },
   { label: "Information", link: "/information" },
 ];
@@ -34,7 +34,7 @@ const MainLayout = () => {
         <NavLink
           className="menulink"
           to={menu.link}
-          // style={menu.style}
+          style={menu.style}
           onClick={() => setActive(menu.label)}
         >
           {menu.label}

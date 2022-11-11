@@ -10,6 +10,7 @@ import {
   useCheckTokenMutation, 
   useFetchRefreshTokenMutation 
 } from "./services/Login";
+import 'antd/dist/antd.css';
 
 const App = () => {  
   const { pathname } = useLocation();
