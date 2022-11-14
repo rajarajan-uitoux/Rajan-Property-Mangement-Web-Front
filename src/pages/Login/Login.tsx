@@ -95,7 +95,7 @@ const Login = () => {
               </Checkbox>
             </Form.Item>
 
-            <NavLink to={"/forgot-password"}>Forgot password </NavLink>
+            <NavLink to={"/forgot-password"} className="color-green">Forgot password </NavLink>
           </div>
         </Form.Item>
 
@@ -103,7 +103,7 @@ const Login = () => {
           <Button
             type="primary"
             htmlType="submit"
-            className={styles.login_form_button}
+            className={`${styles.login_form_button} bg-color-green`}
           >
             Log In
           </Button>

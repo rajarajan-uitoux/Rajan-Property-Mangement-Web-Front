@@ -66,7 +66,7 @@ const Otp = () => {
           <Button
             type="primary"
             htmlType="submit"
-            className={styles.send_button}
+            className={`${styles.send_button} bg-color-green`}
           >
             Verify
           </Button>

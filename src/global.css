@@ -258,3 +258,21 @@ border-radius: 6px;
 .ant-collapse > .ant-collapse-item > .ant-collapse-header:hover .ant-collapse-extra{
   display: block;
 }
+
+::selection {
+  background-color: #489975;
+}
+.color-green {
+  color: #489975;
+}
+.color-green:hover {
+  color: rgba(72, 153, 117, 0.8);
+}
+.bg-color-green {
+  background-color: #489975;
+  border-color: #489975;
+}
+.bg-color-green:hover {
+  border-color: #489975;
+  background-color: rgba(72, 153, 117, 0.8);
+}

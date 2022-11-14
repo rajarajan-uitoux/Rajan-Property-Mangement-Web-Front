@@ -59,7 +59,7 @@ function Editor({ details, type, update, setUpdate, closeEditor } : any) {
         />
       </div>
 
-      <Button type="primary" className={styles.savebtn} onClick={add}>
+      <Button type="primary" className={`${styles.savebtn} bg-color-green`} onClick={add}>
         Save
       </Button>
     </div>

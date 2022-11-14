@@ -59,7 +59,7 @@ export default function ForgetPassword() {
           <Button
             type="primary"
             htmlType="submit"
-            className={styles.send_button}
+            className={`${styles.send_button} bg-color-green`}
           >
             Send
           </Button>

@@ -89,7 +89,7 @@ const ResetPassword = () => {
           <Button
             type="primary"
             htmlType="submit"
-            className={styles.change_button}
+            className={`${styles.change_button} bg-color-green`}
           >
             Change Password
           </Button>

@@ -7,13 +7,10 @@ import {
   TrashIcon
 } from "../../utils/constants";
 import styles from "./Information.module.css";
-import Icon from "@ant-design/icons";
 import { 
   useInformationListQuery,
   useDeleteInformationMutation
 } from "../../services/Information";
-
-const { Panel } = Collapse;
 
 const Information = () => {  
   const [addTitle, setAddTitle] = useState(false);
@@ -58,7 +55,7 @@ const Information = () => {
         <div style={{ marginLeft: "auto" }}>
           {addTitle ? (
             <div
-              className={styles.backButton}
+              className={`${styles.backButton} color-green`}
               onClick={() => {
                 setAddTitle(false);
                 setType("add");
@@ -69,7 +66,7 @@ const Information = () => {
           ) : (
             <Button
               type="primary"
-              className={styles.addtitlebtn}
+              className={`${styles.addtitlebtn} bg-color-green`}
               onClick={() => addEdit({})}
             >
               Add Title
