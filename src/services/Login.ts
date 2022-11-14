@@ -16,15 +16,15 @@ export const LoginApi = createApi({
                 },
             })
         }),
-        // getOtp: builder.mutation<any, any>({
-        //     query: () => `admin/propertyTypes`
-        // }),
-        // verifyOtp: builder.mutation<any, any>({
-        //     query: (filterData) => `admin/dashboard/customerListCount?type=${filterData}`
-        // }),
-        // resetPassword: builder.mutation<any, any>({
-        //     query: (filterData) => `admin/dashboard/propertyCount?type=${filterData}`
-        // }),
+        getOtp: builder.mutation<any, any>({
+            query: () => `admin/propertyTypes`
+        }),
+        verifyOtp: builder.mutation<any, any>({
+            query: (filterData) => `admin/dashboard/customerListCount?type=${filterData}`
+        }),
+        resetPassword: builder.mutation<any, any>({
+            query: (filterData) => `admin/dashboard/propertyCount?type=${filterData}`
+        }),
         checkToken: builder.mutation<any, any>({
             query: (token:any) => ({
                 url: `security/verifyUserToken`,
@@ -55,5 +55,8 @@ export const LoginApi = createApi({
 export const { 
     useLoginMutation,
     useCheckTokenMutation,
-    useFetchRefreshTokenMutation
+    useFetchRefreshTokenMutation,
+    useGetOtpMutation,
+    useVerifyOtpMutation,
+    useResetPasswordMutation
 } = LoginApi;

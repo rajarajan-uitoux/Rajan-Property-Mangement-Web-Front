@@ -5,11 +5,7 @@ export const getPathName = (pathNameList:any, index:string) =>
     .join("/")}`;
 
 export const getPathArray = (pathname:any) => {
-  // console.log('pathname',pathname)
   const decodedUrl = decodeURI(pathname);
-  // console.log('decodedUrl',decodedUrl
-  // .split("/"))
- 
   return decodedUrl
     .split("/")
     .map((el) => ({

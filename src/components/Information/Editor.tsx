@@ -48,7 +48,6 @@ function Editor({ details, type, update, setUpdate, closeEditor } : any) {
           className={styles.input}
           value={title}
           onChange={(e) => {
-            console.log("information title", e.target.value);
             setTitle(e.target.value);
           }}
         />

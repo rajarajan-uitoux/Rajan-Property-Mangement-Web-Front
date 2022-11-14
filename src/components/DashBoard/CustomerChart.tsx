@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import styles from "./DashBoard.module.css";
 import Chart from "react-apexcharts";
 import { xAxisField } from "../../utils/constants";

@@ -7,13 +7,11 @@ const Login = Loadable(lazy(() => import("../pages/Login/Login")));
 const AuthenticatedRoute = Loadable(lazy(() => import("./AuthenticatedRoute")));
 const LoginLayout = Loadable(lazy(() => import("../components/Layout/LoginLayout")));
 const Information = Loadable(lazy(() => import("../pages/Information/Information")));
-// const Customer = Loadable(lazy(() => import("../pages/Customer/Customer")));
-// const CustomerSummary = Loadable(lazy(() => import("../pages/Customer/CustomerSummary")));
-// const ForgetEmailAlert = Loadable(lazy(() => import("../pages/ForgetPassword/Otp")));
-// const ForgetPassword = Loadable(lazy(() => import("../pages/ForgetPassword/ForgetPassword")));
+const Customer = Loadable(lazy(() => import("../pages/Customer/Customer")));
+const CustomerSummary = Loadable(lazy(() => import("../pages/Customer/CustomerSummary")));
+const ForgetPassword = Loadable(lazy(() => import("../pages/ForgetPassword/ForgetPassword")));
 // const ResetPassword = Loadable(lazy(() => import("../pages/ResetPassword/ResetPassword")));
-// const LoginRoute = Loadable(lazy(() => import("./LoginRoute")));
-// const Otp = Loadable(lazy(() => import("../pages/ForgetPassword/Otp")));
+const Otp = Loadable(lazy(() => import("../pages/ForgetPassword/Otp")));
 
 export const routes = [
   {
@@ -30,20 +28,20 @@ export const routes = [
           },
         ],
       },
-      // {
-      //   path: "customer",
-      //   element: <MainLayout />,
-      //   children: [
-      //     {
-      //       path: "",
-      //       element: <Customer />,
-      //     },
-      //     {
-      //       path: ":id",
-      //       element: <CustomerSummary />,
-      //     },
-      //   ],
-      // },
+      {
+        path: "/customer",
+        element: <MainLayout />,
+        children: [
+          {
+            path: "",
+            element: <Customer />,
+          },
+          {
+            path: ":id",
+            element: <CustomerSummary />,
+          },
+        ],
+      },
 
       {
         path: "/information",
@@ -67,14 +65,14 @@ export const routes = [
         element: <Login />,
         
       },
-      // {
-      //   path: "/forgot-password",
-      //   element: <ForgetPassword />,
-      // },
-      // {
-      //   path: "/forgot",
-      //   element: <Otp />,
-      // },
+      {
+        path: "/forgot-password",
+        element: <ForgetPassword />,
+      },
+      {
+        path: "/forgot",
+        element: <Otp />,
+      },
       // {
       //   path: `/resetPassword`,
       //   element: <ResetPassword />,

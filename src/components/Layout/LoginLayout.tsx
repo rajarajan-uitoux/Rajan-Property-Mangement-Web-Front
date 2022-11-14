@@ -1,8 +1,9 @@
 import { Layout } from "antd";
 import { Navigate, Outlet } from "react-router-dom";
 import { LoginImage } from "../../utils/constants";
+import "./MainLayout.css";
 
-const { Content } = Layout;
+// const { Content } = Layout;
 
 const LoginLayout = () => {
   const token = localStorage.getItem("token");
