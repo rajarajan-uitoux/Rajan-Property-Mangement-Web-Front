@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
-import CustomerChart from "../../components/DashBoard/CustomerChart";
-import PropertyChart from "../../components/DashBoard/PropertyChart";
+import ComponentChart from "../../components/DashBoard/ComponentChart";
 import { Select } from "antd";
 import styles from "./DashBoard.module.css";
 import SummaryCardModule from "../../components/DashBoard/SummaryCardModule";
@@ -45,8 +44,8 @@ const DashBoard = () => {
         </div>
       </div>
       <div className={styles.chartcontainer}>
-        <CustomerChart datelabel={datelabel} title={title}/>
-        <PropertyChart datelabel={datelabel} title={title}/>
+        <ComponentChart datelabel={datelabel} title={title} property= "Customers" />
+        <ComponentChart datelabel={datelabel} title={title} property= "Properties" />
       </div>
     </div>
   );

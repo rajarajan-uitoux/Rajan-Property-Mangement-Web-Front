@@ -10,7 +10,7 @@ const Information = Loadable(lazy(() => import("../pages/Information/Information
 const Customer = Loadable(lazy(() => import("../pages/Customer/Customer")));
 const CustomerSummary = Loadable(lazy(() => import("../pages/Customer/CustomerSummary")));
 const ForgetPassword = Loadable(lazy(() => import("../pages/ForgetPassword/ForgetPassword")));
-// const ResetPassword = Loadable(lazy(() => import("../pages/ResetPassword/ResetPassword")));
+const ResetPassword = Loadable(lazy(() => import("../pages/ResetPassword/ResetPassword")));
 const Otp = Loadable(lazy(() => import("../pages/ForgetPassword/Otp")));
 
 export const routes = [
@@ -73,10 +73,10 @@ export const routes = [
         path: "/forgot",
         element: <Otp />,
       },
-      // {
-      //   path: `/resetPassword`,
-      //   element: <ResetPassword />,
-      // },
+      {
+        path: `/resetPassword`,
+        element: <ResetPassword />,
+      },
     ],
   },
 ];

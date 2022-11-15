@@ -7,11 +7,11 @@ import {
   useGetTotalCountQuery
 } from "../../services/Dashboard";
 
-const CustomerChart = ({ datelabel, title } :any) => {
+const ComponentChart = ({ datelabel, title, property } :any) => {
 
   const { data: totalCount } = useGetTotalCountQuery();
 
-  const { data, refetch } = useGetCustomerChartQuery(datelabel);
+  const { data, refetch } = useGetCustomerChartQuery({datelabel, property});
   let seriesArr = [];
   if (datelabel === "today") {
     const returnObj = data?.rows[0];
@@ -42,7 +42,7 @@ const CustomerChart = ({ datelabel, title } :any) => {
   
   const seriesValue:any = [
     {
-      name: "Customers",
+      name: property,
       data: seriesArr,
     },
   ];
@@ -103,8 +103,13 @@ const CustomerChart = ({ datelabel, title } :any) => {
     <div className={styles.customerchartcard}>
       <div className={styles.cardheader}>
         <div style={{ marginLeft: "15px" }}>
-          <div className={styles.cardtitle}> Customers</div>
-          <div className={styles.totalvalue}>{totalCount?.customers} Customers</div>
+          <div className={styles.cardtitle}>{property}</div>
+          <div className={styles.totalvalue}>
+            {
+            property === "Customers" 
+            ? totalCount?.customers 
+            : totalCount?.properties
+            } {property}</div>
         </div>
         <div className={styles.datelabel}>{title?.toUpperCase()}</div>  
       </div>
@@ -123,4 +128,4 @@ export const getMonthNumber = (monthName:String) => {
   return new Date(Date.parse(monthName +" 1, 2025")).getMonth()+1; 
 };
 
-export default CustomerChart;
+export default ComponentChart;

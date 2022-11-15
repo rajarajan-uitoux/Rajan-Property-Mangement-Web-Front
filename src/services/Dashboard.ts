@@ -22,8 +22,13 @@ export const DashboardApi = createApi({
         getPropertyTypes: builder.query<any, void>({
             query: () => `admin/propertyTypes`
         }),
-        getCustomerChart: builder.query<any, String>({
-            query: (filterData) => `admin/dashboard/customerListCount?type=${filterData}`
+        getCustomerChart: builder.query<any, any>({
+            query: ({datelabel, property}) => {
+                const API_URL = property === "Customers" ? "customerListCount" : "propertyCount";
+                return ({
+                    url: `admin/dashboard/${API_URL}?type=${datelabel}`,
+                })
+            }
         }),
         getPropertyChart: builder.query<any, String>({
             query: (filterData) => `admin/dashboard/propertyCount?type=${filterData}`
