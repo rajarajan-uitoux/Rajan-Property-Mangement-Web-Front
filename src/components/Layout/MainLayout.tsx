@@ -1,11 +1,12 @@
 import { Layout, Menu } from "antd";
-import { useState, useMemo } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { useState, useMemo, useEffect } from "react";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { SideBarIcons } from "../../utils/constants";
 import Icon from "@ant-design/icons";
 import Footer from "./Footer";
 import Header from "./Header";
 import "./MainLayout.css";
+import { getPathArray } from "../../utils/urlPathConversion";
 
 const { Sider, Content } = Layout;
 
@@ -20,29 +21,36 @@ const menus = [
 ];
 
 const MainLayout = () => {
-  const [active, setActive] = useState("");
+  const [selectedMenu, setSelectedMenu] = useState<any>(null);
+  const { pathname } = useLocation();
+  let currentPath = getPathArray(pathname)[0]?.name;
+
+  currentPath =
+    currentPath !== undefined ? `/${currentPath.toLowerCase()}` : "/";
 
   const MenuItems = menus?.map((menu, i) => {
     return {
       key: i,
-      icon: (
-        <Icon
-          component={SideBarIcons[i]}
-        />
-      ),
+      icon: <Icon component={SideBarIcons[i]} />,
       label: (
-        <NavLink
-          className="menulink"
-          to={menu.link}
-          style={menu.style}
-          onClick={() => setActive(menu.label)}
-        >
+        <NavLink className="menulink" to={menu.link} style={menu.style}>
           {menu.label}
         </NavLink>
       ),
+      link: menu.link,
     };
   });
   const footer = useMemo(() => <Footer />, []);
+
+  const handleMenuChange = ({ key } : any) => {
+    setSelectedMenu(key);
+  };
+
+  useEffect(() => {
+    const currentMenuItem = MenuItems.find((el) => el.link == currentPath);
+
+    setSelectedMenu(String(currentMenuItem?.key));
+  }, [pathname]);
   return (
     <Layout className={"main_layout"}>
       <Sider
@@ -59,7 +67,10 @@ const MainLayout = () => {
             </div>
           </div>
 
-          <Menu items={MenuItems}></Menu>
+          <Menu onSelect={handleMenuChange}
+            items={MenuItems}
+            selectedKeys={[selectedMenu]}
+          ></Menu>
         </div>
       </Sider>
       <Layout>
